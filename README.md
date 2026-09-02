@@ -31,7 +31,7 @@ NCAA men's and women's basketball, international soccer).
 ```
 abstract/        SSAC27 abstract submission (PDF)
 METHODS.md       full methods log: every model, test, coefficient, and session-by-session provenance
-analysis/        analysis scripts (being populated; see METHODS.md for exact specifications)
+analysis/        23 analysis scripts, one per paper section, with session-verified expected outputs (see analysis/README.md)
 figures/         paper figures
 data/derived/    derived per-player tables produced by this research (see Data below)
 data/reference/  reference data collected for this research (referee census, player bios, Edge tracking pulls)
@@ -58,8 +58,7 @@ sources' terms above.
 ## Reproduction
 
 Every model specification, filter, and coefficient is documented in `METHODS.md` (a complete,
-dated research log). Analysis scripts are being consolidated into `analysis/` ahead of the
-full-paper deadline; the derived tables in `data/derived/` are sufficient to verify every
+dated research log). The derived tables in `data/derived/` are sufficient to verify every
 number in the abstract directly.
 
 ## Contact
