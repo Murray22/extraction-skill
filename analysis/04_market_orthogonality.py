@@ -6,7 +6,9 @@ Zone-start-controlled deployment variant: 08_deployment_zone_start_control.py.
 Expected headline output (verified 2026-09-01/02):
   corr(theta2, points/60) = 0.067 (n=685, 15+ EV hrs)
   deployment: theta2 -0.279 min/game per SD, t=-3.65 (n=726, 60+ GP)
-  embellishment: top-quartile drawers ~8x bottom (0.29 vs 0.04 mean count);
+  embellishment: top-quartile drawers ~7-8x bottom (this script: 88 total RS-scoped,
+  0.239 vs 0.032, corr 0.250 — REPRODUCED 2026-09-02; the session log's 110/0.29/0.04 came
+  from an unscoped query that included playoff calls; this version is the correct scoping);
   HONESTY NOTE (post-swarm): among HIGH-VOLUME drawers (60+ drawn), 14/22 have zero calls
   and the group rate is 0.85/100 drawn — a single call is uninformative; never use N=1 as
   exoneration for any individual player.
