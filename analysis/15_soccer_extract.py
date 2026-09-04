@@ -1,3 +1,14 @@
+# Reproducibility note (2026-09-04, added by the reproduction test -- see
+# research_outputs/handoff_reports/2026-09-04_task13_extraction_skill_repro.md): this script's
+# only input is public StatsBomb Open Data (github.com/statsbomb/open-data, non-commercial
+# license with attribution) -- METHODS.md's Session 7 log names the corpus as "1,179 full
+# StatsBomb event files (3.4GB, all 8 tournaments)" -- but neither this file nor METHODS.md
+# names the exact 8 competition_id/season_id pairs, so a stranger cannot yet reconstruct the
+# events_raw/ directory from the public StatsBomb repo alone: fetch statsbomb/open-data's
+# data/matches/<competition_id>/<season_id>.json for each tournament to get match ids, then
+# data/events/<match_id>.json for each -- this repo just doesn't say which competitions.
+# Genuinely undocumented; not fixed here (would require re-deriving the exact tournament list
+# from the local raw corpus and is a bigger change than a path/dependency fix).
 import json, glob
 import numpy as np, pandas as pd
 sp='../data/derived'

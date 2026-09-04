@@ -1,9 +1,16 @@
-import duckdb, numpy as np, pandas as pd
+import numpy as np, pandas as pd
 sp='../data/derived'
-refs=pd.read_csv(f'{sp}/game_referees.csv',dtype={'game_id':str})
+# game_referees.csv is fetch_referees.py's output path/name, but the committed reference pull
+# lives at ../data/reference/game_referees_2023_2026.csv (same columns: game_id, referees) --
+# fixed here rather than renaming the committed file, since data/reference/ is where every
+# other NHL public-API reference pull in this repo lives (player_bios.csv, player_birthdates.csv).
+refs=pd.read_csv('../data/reference/game_referees_2023_2026.csv',dtype={'game_id':str})
 refs=refs[refs.referees.notna()&(refs.referees!='')]
 print(f"games with refs: {len(refs)}; distinct referees: {len(set('|'.join(refs.referees).split('|')))}")
-con = duckdb.connect('/home/steve_murray/projects/GameVibe/hockey/data/active_db/gamevibe_primary.duckdb', read_only=True)
+# NOTE (reproducibility fix): this script's only DB connection was unused dead code -- every
+# value below comes from refs (data/reference/) and l1_playergames.parquet (data/derived/,
+# both already committed), so the duckdb.connect() call was blocking the script for anyone
+# without the private DB despite never actually reading from it. Removed.
 df=pd.read_parquet(f'{sp}/l1_playergames.parquet')
 df=df.merge(refs, left_on='game_id', right_on='game_id', how='inner')
 print(f"player-games with refs: {len(df)} / 141711")
@@ -21,7 +28,14 @@ lam=rr.mean_pens.mean(); samp=np.sqrt((lam/rr.games).mean())
 print(f"  sampling sd expectation ~{samp:.3f} -> excess referee heterogeneity: {max(rr.mean_pens.std()**2-samp**2,0)**.5:.3f} pens/game (real refs差)")
 # 2) Referee-disjoint split-half of player skill
 # assign each REF to half A/B by hash; a game goes to A if both refs in A, B if both in B, else dropped
-h={ref:(hash(ref)%2) for ref in set('|'.join(refs.referees).split('|'))}
+# REPRODUCIBILITY FIX (2026-09-04): Python's built-in hash() on strings is randomized per
+# process (PYTHONHASHSEED) unless explicitly disabled -- confirmed directly (two back-to-back
+# `python3 -c "print(hash('Wes McCauley'))"` calls returned different values). That made this
+# section's ref->half assignment, and therefore its printed r/SB/n, genuinely different on every
+# run of this exact script against the exact same data -- not a data or logic bug, a hash-
+# instability one. hashlib.md5 is stable across processes/machines/Python versions.
+import hashlib
+h={ref:(int(hashlib.md5(ref.encode()).hexdigest(),16)%2) for ref in set('|'.join(refs.referees).split('|'))}
 def game_half(s):
     hs={h[r] for r in s.split('|')}
     return hs.pop() if len(hs)==1 else -1

@@ -15,7 +15,7 @@ against github.com/statsbomb/open-data.
 """
 import numpy as np, pandas as pd
 
-SLIM = "soccer_events_slim.parquet"   # produced by 15_soccer_extract.py
+SLIM = "../data/derived/soccer_events_slim.parquet"   # produced by 15_soccer_extract.py
 
 df = pd.read_parquet(SLIM)
 m = df.groupby(['mid','pid']).agg(won=('won','sum'), com=('com','sum'), rows=('pid','size'),
