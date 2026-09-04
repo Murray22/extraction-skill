@@ -1,0 +1,14 @@
+# Versions confirmed to reproduce every script's docstring-documented output exactly
+# (2026-09-04 reproduction test, see the workspace's research_outputs/handoff_reports/
+# 2026-09-04_task13_extraction_skill_repro.md for the full run log). Not previously pinned --
+# README/analysis/README.md only named the packages, not versions, which is itself a
+# reproducibility gap on a scientific repo: an unpinned environment can silently drift to a
+# version that changes numeric output (e.g. a solver default, a rounding behavior) with no
+# signal that anything changed. Newer compatible versions are expected to work too; these are
+# a known-good floor, not a hard ceiling.
+duckdb>=1.5.5
+pandas>=3.0.5
+numpy>=2.5.2
+scikit-learn>=1.9.0
+scipy>=1.18.1
+pyarrow>=25.0.1

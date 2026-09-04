@@ -25,7 +25,12 @@ with ThreadPoolExecutor(max_workers=6) as ex:
     for i,(gid,refs) in enumerate(ex.map(get, gids)):
         rows.append((gid, '|'.join(refs)))
         if i%400==0: print(f"{i}/{len(gids)}", flush=True)
-with open(f'{sp}/game_referees.csv','w',newline='') as f:
+# Output path fix (2026-09-04 reproducibility test): previously wrote to
+# ../data/derived/game_referees.csv, but the committed reference pull -- and
+# 09_referee_disjoint_test.py's read path, also fixed in this same pass -- both use
+# ../data/reference/game_referees_2023_2026.csv. Verified byte-identical to the committed file
+# on a fresh live refetch.
+with open('../data/reference/game_referees_2023_2026.csv','w',newline='') as f:
     w=csv.writer(f); w.writerow(['game_id','referees']); w.writerows(rows)
 missing=sum(1 for _,r in rows if not r)
 print(f"DONE {len(rows)} games, {missing} missing refs", flush=True)

@@ -2,6 +2,9 @@ import json, urllib.request, csv, time
 import pandas as pd
 from concurrent.futures import ThreadPoolExecutor
 sp='../data/derived'
+ref='../data/reference'   # output dir: 06_routes_aging_and_nulls.py reads player_birthdates.csv
+                          # from data/reference/, not data/derived/ -- this script previously
+                          # wrote to the wrong directory (reproducibility path-mismatch fix)
 d=pd.read_parquet(f'{sp}/repl_player_seasons.parquet')
 pids=sorted(set(d[d.mu>=5].player_id.astype(int)))
 print('players to fetch:', len(pids), flush=True)
@@ -19,6 +22,6 @@ with ThreadPoolExecutor(max_workers=6) as ex:
     for i,(pid,bd) in enumerate(ex.map(get,pids)):
         rows.append((pid,bd))
         if i%200==0: print(i,flush=True)
-with open(f'{sp}/player_birthdates.csv','w',newline='') as f:
+with open(f'{ref}/player_birthdates.csv','w',newline='') as f:
     w=csv.writer(f); w.writerow(['player_id','birth_date']); w.writerows(rows)
 print('DONE', sum(1 for _,b in rows if b), '/', len(rows), flush=True)

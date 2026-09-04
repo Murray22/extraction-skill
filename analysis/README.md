@@ -6,11 +6,29 @@ regression targets when reproducing. Scripts are numbered by paper section, not 
 
 ## Environment & paths
 
-Python 3.12+ with `duckdb, pandas, numpy, scikit-learn, scipy`. Scripts that hit source
-databases carry absolute paths to the research environment's DuckDB files at the top —
-**edit the constants for your environment**. The source DBs are built from public APIs (see
-repo README); the derived tables they produce are already committed in `../data/derived/`,
-so every paper number can be *verified* without any database, and *regenerated* with them.
+Python 3.12+ with `duckdb, pandas, numpy, scikit-learn, scipy, pyarrow` — see
+`requirements.txt` for a version floor confirmed to reproduce every script's docstring output
+exactly (2026-09-04 reproduction test). Scripts that hit source databases carry absolute paths
+to the research environment's DuckDB files at the top — **edit the constants for your
+environment**. The source DBs are built from public APIs (see repo README), but are not
+themselves distributed in this repo and cannot be rebuilt from it alone.
+
+Correction (2026-09-04 reproduction test): most scripts still require one of those source
+DuckDB files even to *verify* an already-published number, not just to regenerate one from
+scratch — despite the line this replaces, the committed `../data/derived/` tables alone are
+NOT sufficient for most scripts. As of that test, exactly three analysis scripts run end to
+end from committed data with no database and no other private input:
+`09_referee_disjoint_test.py`, `17_soccer_replication_analysis.py` (both needed a path fix —
+see git history), and `18_caphit_pricing_test.py` (needs an external `caphits.csv`, not
+committed, by design — see its own docstring). The four `fetch_*.py` reference-data collectors
+(`fetch_bios.py`, `fetch_birthdates.py`, `fetch_edge_speed.py`, `fetch_edge_zonestarts.py`) also
+run end to end against only public NHL API calls plus a committed derived table as input.
+Every other numbered script requires a source DuckDB file (`gamevibe_primary.duckdb` or
+`gamevibe_discovery.duckdb`) or private raw per-league event dumps (NBA/WNBA/MBB/WBB JSON or
+parquet, StatsBomb soccer events) that are not part of this repository. Full per-script
+ran/failed/needs-private-data status and docstring-match results:
+`research_outputs/handoff_reports/2026-09-04_task13_extraction_skill_repro.md` in the parent
+GameVibe workspace (not part of this public repo).
 
 ## Script map
 
