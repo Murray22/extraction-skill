@@ -192,10 +192,11 @@ The state-conditional estimate: **ΔWP = +0.0171 per drawn even-strength minor (
 shrinking toward zero at ±3), and in agreement with the independent goals path
 (+0.118 goals × ~0.16 wins/goal ≈ +0.019). An elite net drawer (drawn minus taken, above
 expectation) adds **~0.3 wins per season** through the penalty ledger; the best-to-worst
-roster-level spread across fifteen seasons of team-seasons is ~139 net minors ≈ **2.7
+roster-level spread across fifteen seasons of team-seasons is 163 net minors ≈ **~3.17
 wins**. Roster draw skill is acquirable: prior-season player skill aggregates predict a
-team's next-season net differential at r = 0.45 (levels; year-over-year changes are far
-noisier at 0.13, so the claim is about assembly, not transactions). In the NBA the
+team's next-season net differential at r = 0.708 (n = 425); year-over-year changes track
+almost as strongly, r = 0.567 (n = 390) — a real but modest gap from levels, not evidence
+that the effect is driven by roster assembly rather than in-season transactions. In the NBA the
 analogous estimate is **+0.0102 WP per drawn foul trip (±0.0021, n = 138,347)**, peaking
 in the final six minutes where the bonus and stopped clock bind — with the important
 asymmetry that basketball's version flows through the drawer's own visible free-throw

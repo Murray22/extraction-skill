@@ -316,10 +316,11 @@ tax exists but weaker than hockey: corr(won, committed) = 0.301 (NHL 0.489).
 ### Team construction — the GM lever, honestly bounded
 
 Roster-aggregated prior-season player skill (cumulative shrunken draw & take ratios ×
-current exposure) vs actual team-season net EV differential, 15 seasons, 393 team-seasons:
-**levels r = 0.450**; actual spread sd ≈ 20 net minors/season, best-to-worst range 139 minors
-≈ 16 goals ≈ **2.7 wins**. But YoY *changes* r = 0.134 — one-season diffs are mostly noise;
-present the levels claim, not a churn-tracking claim.
+current exposure) vs actual team-season net EV differential, 15 seasons, 425 team-seasons:
+**levels r = 0.708**; actual spread sd ≈ 24.8 net minors/season, best-to-worst range 163
+minors ≈ **~3.17 wins**. YoY *changes* track almost as strongly, r = 0.567 (n = 390) — a
+real but modest gap from levels, not a churn-vs-assembly distinction; present both, not
+levels alone.
 
 ### Leverage timing — null #3, with a gem inside
 
