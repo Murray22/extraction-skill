@@ -38,7 +38,7 @@ GameVibe workspace (not part of this public repo).
 | `02_penalty_tilt_rapm.py` | 4.3, 5 | tilt ridge (SB 0.93) vs individual θ (r=0.087) — two-construct result |
 | `03_win_probability_value.py` | 4.4, 6 | ΔWP +0.0171±0.0056; time/score profiles; taking-side mirror |
 | `04_market_orthogonality.py` | 7.1, 7.3 | pts/60 r=0.067; deployment −0.279 (t=−3.65); embellishment (with post-review honesty note) |
-| `05_fifteen_season_replication.py` | 5, 6, 7.1 | 14/14 YoY pairs (0.587); career SB 0.893; all-time board; taken-side + 2×2; team lever r=0.45; writes `repl_player_seasons.parquet` |
+| `05_fifteen_season_replication.py` | 5, 6, 7.1 | 14/14 YoY pairs (0.587); career SB 0.893; all-time board; taken-side + 2×2; team lever r=0.708 (levels)/0.567 (changes); writes `repl_player_seasons.parquet` |
 | `06_routes_aging_and_nulls.py` | 4.5, 7.1 | route stability; era trend; real-age curve; carrier −4.0 vs prov −2.6%/yr; hot-hand + size nulls |
 | `07_edge_speed_mechanism.py` | 4.5, 7.1 | Edge speed → carrier-route partials (0.166-0.225 vs 0.037-0.051) |
 | `08_deployment_zone_start_control.py` | 7.3 | deployment −0.286/−0.177 under OZ / OZ+DZ start controls |

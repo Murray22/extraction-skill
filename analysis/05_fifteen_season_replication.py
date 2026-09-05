@@ -7,8 +7,8 @@ Expected headline output (verified 2026-09-01/02):
   career split-half (odd vs even seasons, 20+ expected each): r=0.807 SB=0.893 n=597
   all-time board (40+ expected): B.Smith 2.72, Hathaway 2.49, Kadri 2.22, Dorsett, Downie,
     Cousins, Stuetzle 2.12 (7th of 641)
-  taken-side YoY mean 0.619; corr(draw,take)=0.489; 2x2 = 89/184/184/89
-  team lever: prior-roster skill vs team net differential r=0.450 (n=393); changes r=0.134
+  taken-side YoY mean 0.622; corr(draw,take)=0.496 (n=605); 2x2 = 105/197/198/105
+  team lever: prior-roster skill vs team net differential r=0.708 (n=425); changes r=0.567 (n=390)
 
 IMPORTANT provenance note: exposure = shifts_raw (full 2010-11..2025-26 coverage). The
 `shifts`/`event_on_ice` tables in this DB cover 2023-25 only — a 2026-09-02 verification
