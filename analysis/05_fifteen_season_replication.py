@@ -18,7 +18,7 @@ Requires: gamevibe_discovery.duckdb.
 import duckdb, numpy as np, pandas as pd
 
 DB = "/home/steve_murray/projects/GameVibe/hockey/data/gamevibe_discovery.duckdb"
-OUT_DIR = "."
+OUT_DIR = "../data/derived"
 EV_CODES = ('1551','1441','1331')   # situationCode EV states, goalies in
 
 con = duckdb.connect(DB, read_only=True)
