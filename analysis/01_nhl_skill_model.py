@@ -15,7 +15,7 @@ import duckdb, numpy as np, pandas as pd
 from sklearn.linear_model import PoissonRegressor
 
 DB = "/home/steve_murray/projects/GameVibe/hockey/data/active_db/gamevibe_primary.duckdb"
-OUT_DIR = "."
+OUT_DIR = "../data/derived"  # run from analysis/, like 05; 02, 06 and 16 read from here
 
 con = duckdb.connect(DB, read_only=True)
 df = con.execute("""
