@@ -7,8 +7,8 @@ Expected headline output (verified 2026-09-01):
   by time bucket: rises from +0.006 (first 10 min) to ~+0.02 late
   by score diff: peaks at tied/-1, shrinks at +/-3
   taking-side mirror: -0.0171 (construction identity)
-Goals-path triangulation (+0.118 goals/drawn minor: 20.3% PP-window conversion vs ~8.5% EV
-baseline over 22,024 minors) is documented in METHODS.md (v2 addendum).
+Goals-path triangulation: 19_goals_path_baseline.py (+0.127 goals/drawn minor over a computed
+state-matched EV baseline; replaces the earlier +0.118, whose ~8.5% baseline was never computed).
 """
 import duckdb, numpy as np, pandas as pd
 
