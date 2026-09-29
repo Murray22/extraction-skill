@@ -139,8 +139,8 @@ the empirical win rate of identical (score differential ±3, ten-minute time buc
 states, with the baseline surface built from all game states in all games, both
 perspectives. No model assumptions enter. An independent path — measured scoring rate
 inside the two-minute drawn-penalty window (20.3%, which independently matches league
-power-play conversion) against the even-strength baseline (~8.5%) — provides
-triangulation.
+power-play conversion) against a computed, score- and time-matched even-strength baseline
+(8.2%; +0.127 goals) — provides triangulation.
 
 ### 4.5 Routes, aging, and mechanism
 
@@ -190,8 +190,8 @@ random-split calibration (0.55).
 The state-conditional estimate: **ΔWP = +0.0171 per drawn even-strength minor (95% CI
 ±0.0056)**, largest exactly where leverage theory predicts (tied or trailing by one;
 shrinking toward zero at ±3), and of the same order as the independent goals path
-(+0.127 goals over a computed even-strength baseline × ~0.16 wins/goal ≈ +0.020; +0.163 net of
-shorthanded goals prevented). An elite net drawer (drawn minus taken, above
+(+0.127 goals over a computed even-strength baseline × ~0.16 wins/goal, an uncomputed rule of
+thumb, ≈ +0.020; +0.163 in goal differential, as the shorthanded side also scores 0.037 less). An elite net drawer (drawn minus taken, above
 expectation) adds **~0.3 wins per season** through the penalty ledger; the best-to-worst
 roster-level spread across fifteen seasons of team-seasons is 139 net minors ≈ **~2.4
 wins**. Roster draw and discipline skill is acquirable: prior-season player skill aggregates
