@@ -11,7 +11,7 @@ game_seconds <= 3600). Window: goals with game_seconds in (t, t+120]. Main estim
 that end inside regulation (t <= 3480) so every window is a full 120 s; the all-minors
 conversion is printed too, to tie back to the 20.3%.
 Baseline: each team's goals per second of even-strength (5v5/4v4/3v3) regulation time, by score
-difference (clipped +/-3, from that team's side) and 10-minute bucket, the strata 03 uses; the
+difference (clipped +/-3, from that team's side) and 10-minute bucket (03 also uses venue); the
 state of a goal is the goal row's own manpower_state (the state it was scored in); time in a
 state is the gap to the next game_state row. Expected baseline goals = rate x 120 s.
 
@@ -21,9 +21,9 @@ Expected output (primary DB, regular seasons 2023-24..2025-26; run 2026-09-29):
   full-window minors n=19,807: P(score) 20.5% vs state-matched baseline 8.2% (+0.123)
     goals for     +0.1266 +/- 0.0059 over baseline   <- replaces "+0.118"
     goals against -0.0367 +/- 0.0031 (shorthanded side scores less)
-    NET goals     +0.1632 +/- 0.0068 per drawn minor
-The goals->wins step (~0.16 wins/goal, i.e. ~6 goals per win) is a rule of thumb, not computed
-here: goals-for x 0.16 = +0.020 and net x 0.16 = +0.026 wins, against 03's measured +0.0171.
+    goal differential +0.1632 +/- 0.0068 per drawn minor (for minus against, vs baseline)
+The goals->wins step (~0.16 wins/goal, i.e. ~6 goals per win) is an uncomputed rule of thumb:
+goals-for x 0.16 = +0.020 and differential x 0.16 = +0.026 wins, against 03's measured +0.0171.
 Writes ../data/derived/l3_goals_path_windows.parquet (one row per minor window).
 Requires: gamevibe_primary.duckdb.
 """
@@ -48,7 +48,7 @@ gs = con.execute(f"""
   JOIN events e ON e.game_id=gs.game_id AND e.event_id=gs.event_id
   JOIN games_metadata gm ON CAST(gs.game_id AS VARCHAR)=gm.game_id
   LEFT JOIN play_by_play_raw p ON p.game_id=CAST(gs.game_id AS VARCHAR) AND TRY_CAST(p.event_id AS INT)=gs.event_id
-  WHERE CAST(gs.game_id AS VARCHAR) IN ({games})""").df()
+  WHERE CAST(gs.game_id AS VARCHAR) IN ({games})""").df()  # sorted below
 gs = gs.sort_values(['game_id', 'sort_order']).reset_index(drop=True)
 gs['hs_prev'] = gs.groupby('game_id').hs.shift(1); gs['as_prev'] = gs.groupby('game_id').as_.shift(1)
 
@@ -85,7 +85,8 @@ mn = con.execute(f"""
   WHERE LOWER(p.event_type)='penalty' AND gs.manpower_state IN {EV}
     AND COALESCE(TRY_CAST(p.penalty_minutes AS DOUBLE), e.penalty_minutes)=2
     AND gm.season_type='2' AND gm.season IN {SEASONS}
-    AND e.game_seconds IS NOT NULL AND e.game_seconds<=3600 AND p.home_score IS NOT NULL""").df()
+    AND e.game_seconds IS NOT NULL AND e.game_seconds<=3600 AND p.home_score IS NOT NULL
+  ORDER BY p.game_id, e.game_seconds, TRY_CAST(p.event_id AS INT)""").df()
 mn['i'] = np.arange(len(mn))
 g = gs[gs.et == 'goal'][['game_id', 't', 'event_team_abbr', 'home_team_abbr']].copy()
 g['game_id'] = g.game_id.astype(str); g['home_goal'] = (g.event_team_abbr == g.home_team_abbr).astype(int)
@@ -113,8 +114,8 @@ print(f"  goals for:     {full.gf.mean():.4f} vs baseline {full.base_gf.mean():.
 m2, ci2 = est(full.ga - full.base_ga)
 print(f"  goals against: {full.ga.mean():.4f} vs baseline {full.base_ga.mean():.4f} -> {m2:+.4f} +/- {ci2:.4f}")
 m3, ci3 = est((full.gf - full.ga) - (full.base_gf - full.base_ga))
-print(f"  NET goals per drawn minor: {m3:+.4f} +/- {ci3:.4f} (95% CI)")
+print(f"  goal differential per drawn minor: {m3:+.4f} +/- {ci3:.4f} (95% CI)")
 print(f"  unmatched league baseline {lam_all*W:.4f}/team: goals-for {full.gf.mean()-lam_all*W:+.4f}, "
-      f"net {(full.gf-full.ga).mean():+.4f}")
+      f"differential {(full.gf-full.ga).mean():+.4f}")
 full[['game_id', 't', 'home_drew', 'diff', 'tb', 'gf', 'ga', 'base_gf', 'base_ga']].to_parquet(
     f"{OUT_DIR}/l3_goals_path_windows.parquet", index=False)

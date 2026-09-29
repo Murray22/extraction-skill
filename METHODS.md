@@ -77,10 +77,11 @@ surface built from all events in all games (both perspectives).
 first 10 min → +0.019-0.023 late) and score states (peaks at tied/−1, shrinks at ±3 where WP
 is saturated — exactly the leverage shape it should have).
 
-Triangulation: the independent goals path (+0.127 goals/drawn minor for the drawing team over
-a state-matched EV baseline, 20.5% vs 8.2% scoring in the 2-min window; script 19, 2026-09-29) ×
-~0.16 wins/goal (rule of thumb, ~6 goals/win) gives ≈ +0.020 — same order as ΔWP. Net of the
-shorthanded goals it prevents the goals path is +0.163 (≈ +0.026). The +0.118 first cited here
+Triangulation: the independent goals path (+0.127 goals/drawn minor for the drawing team:
+0.212 goals in the 2-min window vs 0.086 at a state-matched EV baseline; script 19, 2026-09-29) ×
+~0.16 wins/goal (an uncomputed rule of thumb, ~6 goals/win) gives ≈ +0.020 — same order as ΔWP.
+In goal differential the swing is +0.163 (the shorthanded side also scores 0.037 less than at
+even strength), ≈ +0.026 on the same rule of thumb. The +0.118 first cited here
 rested on a "~8.5%" baseline that was never computed.
 
 Scale: Raymond-class net drawer (+17.7 net minors/season) ≈ **+0.30 wins/season** from the
@@ -165,10 +166,11 @@ Officials are NOT in either DB but ARE in the NHL API: `api-web.nhle.com/v1/game
 right-rail` → `gameInfo.referees` (landing does NOT carry them). Fetched all 3,936
 regular-season games (46 distinct referees, 0 missing; scratchpad `game_referees.csv`).
 
-- **Referee-disjoint split-half:** hash each referee into set A or B, keep only games whose
-  two refs fall in the same set (749 + 1,189 games), compute each player's draw ratio
-  separately under crew-set A vs crew-set B. **r = 0.509 (SB 0.674, n=199)** vs a random game
-  split of the same data **r = 0.485 (SB 0.653)**. Skill measured under completely disjoint
+- **Referee-disjoint split-half:** hash each referee (md5) into set A or B, keep only games whose
+  two refs fall in the same set (1,007 + 1,066 games), compute each player's draw ratio
+  separately under crew-set A vs crew-set B. **r = 0.538 (SB 0.699, n=262)** vs a random game
+  split of the same data **r = 0.548 (SB 0.708, n=316)** (script 09 as committed, deterministic;
+  corrected 2026-09-29 from 0.509 vs 0.485, n=199, one draw of an earlier randomized `hash()` split). Skill measured under completely disjoint
   referee crews agrees with itself exactly as well as any random split — draw skill is NOT a
   favored-by-specific-referees artifact. This retires the paper's largest stated limitation.
 - Referee heterogeneity in call rates is real but modest: 41 refs (50+ games) range
@@ -296,7 +298,8 @@ not a streaky one — retroactively validates the Poisson machinery of L1.
 
 Taken-side EV minors, same construction, 15 seasons: **YoY mean r = 0.619** (14 pairs;
 drawn-side was 0.587). Career draw-ratio × take-ratio correlate r = 0.489 (n=546, 40+
-expected both sides). Median-split 2×2 (89/184/184/89):
+expected both sides). Median-split 2×2 (89/184/184/89). (2026-09-29: these don't reproduce from script 05 with or
+without 2025-26; 05 as committed gives taken YoY 0.622, corr 0.495 (n=593), 2×2 102/194/195/102.)
 - **MAGNET** (draw+, take−): Skinner, Gostisbehere, Ehlers, McDavid — the unpriced corner.
 - **AGITATOR** (draw+, take+): Hathaway, Kadri, Bunting, Dorsett.
 - **INVISIBLE** (draw−, take−): Garrison, Duncan Keith, Vrbata.

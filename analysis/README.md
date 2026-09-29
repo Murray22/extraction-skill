@@ -49,7 +49,7 @@ GameVibe workspace (not part of this public repo).
 | `15_soccer_extract.py` + `17_soccer_replication_analysis.py` | 7.2 | StatsBomb slim-parse; SB 0.705; Hazard top-10; tax 0.301 |
 | `16_playoffs_makeup_whistles.py` | 7.4 | playoffs +16% & 1:1 transfer; make-up +0.204 (z=26.8) w/ decay; close-late −12%; timing flat across skill |
 | `18_caphit_pricing_test.py` | 7.3 (pending) | staged salary regression — runs when contract data arrives |
-| `19_goals_path_baseline.py` | 6 | goals path: +0.127 goals/drawn minor over a computed EV baseline (20.5% vs 8.2%), +0.163 net; writes `l3_goals_path_windows.parquet` |
+| `19_goals_path_baseline.py` | 6 | goals path: +0.127 goals/drawn minor over a computed EV baseline (0.212 vs 0.086 goals in the window), +0.163 in goal differential; writes `l3_goals_path_windows.parquet` |
 | `fetch_referees.py` / `fetch_birthdates.py` / `fetch_bios.py` / `fetch_edge_speed.py` / `fetch_edge_zonestarts.py` | 3 | reference-data collectors (NHL public API); outputs committed in `../data/reference/` |
 
 ## Provenance & honesty notes
