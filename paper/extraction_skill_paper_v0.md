@@ -72,7 +72,7 @@ stylistic routes and shown the routes are themselves stable traits with distinct
 validated the skill against referee-crew identity using a full officials census; confirmed
 a speed mechanism with league tracking data; applied one identical construction across six
 leagues; or tested whether the skill is rewarded in deployment. Those are this paper's
-contributions. Our value-per-penalty estimate (+0.118 goals, even-strength minors only)
+contributions. Our value-per-penalty estimate (+0.127 goals, even-strength minors only)
 sits slightly below older all-situations public estimates (~0.15-0.17), consistent with
 scope differences.
 
@@ -182,21 +182,21 @@ top; defensive-zone defensemen at the bottom — and it correlates with individu
 **r = 0.087**. On-ice tilt is territory; extraction is a skill. **Not the team:** adding
 own-team draw environment moves θ by nothing (r = 0.987 with the uncontrolled version)
 while slightly improving out-of-sample fit (0.738). **Not the referees:** draw ratios
-measured under disjoint referee crews agree at r = 0.51, statistically identical to the
-random-split calibration (0.49).
+measured under disjoint referee crews agree at r = 0.54, statistically identical to the
+random-split calibration (0.55).
 
 ## 6. Results: value
 
 The state-conditional estimate: **ΔWP = +0.0171 per drawn even-strength minor (95% CI
 ±0.0056)**, largest exactly where leverage theory predicts (tied or trailing by one;
-shrinking toward zero at ±3), and in agreement with the independent goals path
-(+0.118 goals × ~0.16 wins/goal ≈ +0.019). An elite net drawer (drawn minus taken, above
+shrinking toward zero at ±3), and of the same order as the independent goals path
+(+0.127 goals over a computed even-strength baseline × ~0.16 wins/goal ≈ +0.020; +0.163 net of
+shorthanded goals prevented). An elite net drawer (drawn minus taken, above
 expectation) adds **~0.3 wins per season** through the penalty ledger; the best-to-worst
-roster-level spread across fifteen seasons of team-seasons is 163 net minors ≈ **~3.17
-wins**. Roster draw skill is acquirable: prior-season player skill aggregates predict a
-team's next-season net differential at r = 0.708 (n = 425); year-over-year changes track
-almost as strongly, r = 0.567 (n = 390) — a real but modest gap from levels, not evidence
-that the effect is driven by roster assembly rather than in-season transactions. In the NBA the
+roster-level spread across fifteen seasons of team-seasons is 139 net minors ≈ **~2.4
+wins**. Roster draw and discipline skill is acquirable: prior-season player skill aggregates
+predict a team's next-season net differential at r = 0.45 (levels, n = 393; year-over-year
+changes are far noisier at 0.13, so the claim is about assembly, not transactions). In the NBA the
 analogous estimate is **+0.0102 WP per drawn foul trip (±0.0021, n = 138,347)**, peaking
 in the final six minutes where the bonus and stopped clock bind — with the important
 asymmetry that basketball's version flows through the drawer's own visible free-throw
@@ -233,7 +233,7 @@ hand), and elite drawers' calls are distributed across game states like everyone
 | NBA | 5 seasons · 5,830 games | 0.94 | 0.86–0.88 × 4 | Antetokounmpo 3.90× |
 | WNBA | 6 seasons · 1,306 games | 0.86 | 0.72–0.82 × 5 | Wilson 2.34× |
 | NCAA M | 10 seasons | — | 0.54–0.66 × 9 | Dybantsa 2.16× |
-| NCAA W | 11 seasons | — | 0.59–0.67 × 8 | Nichols 2.63× |
+| NCAA W | 11 seasons | — | 0.59–0.68 × 10 | Nichols 2.63× |
 | Soccer | 8 tournaments · 1,179 matches | 0.71 | — | Hazard pooled top-10 |
 
 One construction, both sexes, three levels of play; every leaderboard passes face validity

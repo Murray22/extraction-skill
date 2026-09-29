@@ -20,10 +20,10 @@ NCAA men's and women's basketball, international soccer).
 | The skill is real and persists out of sample | predicting held-out-season draw totals: r 0.25 (exposure) → 0.53 (context) → **0.72** (+skill); held-out rates monotone in prior skill quartiles (0.41→0.81/hr) |
 | It is career-stable | positive in **14 of 14** adjacent season pairs since 2010 (mean r=0.59); career split-half 0.89 |
 | It is individual, not possession or team | r=0.087 vs on-ice penalty "tilt" (which is possession); team-environment controls move skill ratings by nothing |
-| It is not a referee artifact | reliability across disjoint referee crews (0.51) equals random-split calibration (0.49); full 46-official census |
-| It has win value | +0.017 win probability per drawn EV minor (state-conditional), independently triangulated via goal conversion (+0.118 goals) |
-| Mechanism: speed | two stable routes (provocation vs puck-carrier); carrier route ages faster (−4.0 vs −2.6%/yr); NHL Edge measured speed predicts carrier-route draws (partial r 0.17–0.23, possession-controlled) but not provocation draws (0.04) |
-| It generalizes | same construction: NBA (reliability 0.94), WNBA (0.86), NCAA M/W (YoY 0.54–0.67), soccer (0.71) |
+| It is not a referee artifact | reliability across disjoint referee crews (0.54) matches random-split calibration (0.55); full 46-official census |
+| It has win value | +0.017 win probability per drawn EV minor (state-conditional), independently triangulated via goal conversion (+0.127 goals over a computed even-strength baseline) |
+| Mechanism: speed | two stable routes (provocation vs puck-carrier); carrier route ages faster (−4.0 vs −2.6%/yr); NHL Edge measured speed predicts carrier-route draws (partial r 0.16–0.23, possession-controlled) but not provocation draws (0.04) |
+| It generalizes | same construction: NBA (reliability 0.94), WNBA (0.86), NCAA M/W (YoY 0.54–0.68), soccer (0.71) |
 | Nobody rewards it | r=0.067 vs points/60; deployment −0.28 min/game per SD conditional on scoring, −0.18 after zone-start controls |
 
 ## Repository map
@@ -58,8 +58,8 @@ sources' terms above.
 ## Reproduction
 
 Every model specification, filter, and coefficient is documented in `METHODS.md` (a complete,
-dated research log). The derived tables in `data/derived/` are sufficient to verify every
-number in the abstract directly.
+dated research log). The derived tables in `data/derived/` let you check many numbers directly;
+most scripts need the source DuckDB files to rerun (see `analysis/README.md`).
 
 ## Contact
 

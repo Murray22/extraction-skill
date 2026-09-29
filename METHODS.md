@@ -77,8 +77,11 @@ surface built from all events in all games (both perspectives).
 first 10 min → +0.019-0.023 late) and score states (peaks at tied/−1, shrinks at ±3 where WP
 is saturated — exactly the leverage shape it should have).
 
-Triangulation: the independent goals path (+0.118 goals/drawn minor measured earlier ×
-~0.16 wins/goal) gives ≈ +0.019 — two routes, same answer.
+Triangulation: the independent goals path (+0.127 goals/drawn minor for the drawing team over
+a state-matched EV baseline, 20.5% vs 8.2% scoring in the 2-min window; script 19, 2026-09-29) ×
+~0.16 wins/goal (rule of thumb, ~6 goals/win) gives ≈ +0.020 — same order as ΔWP. Net of the
+shorthanded goals it prevents the goals path is +0.163 (≈ +0.026). The +0.118 first cited here
+rested on a "~8.5%" baseline that was never computed.
 
 Scale: Raymond-class net drawer (+17.7 net minors/season) ≈ **+0.30 wins/season** from the
 penalty ledger alone; top-vs-bottom-decile net spread ≈ +0.4 wins. Small but real, and
@@ -274,7 +277,7 @@ only on `PersonalFoul`; **missed FTs absent entirely** (trips identified via mad
 ~9% undercount, biased against poor FT shooters/hack-a targets); no minutes (exposure = pbp
 row-appearances, a usage proxy). With those stated limits: **MBB YoY r = 0.54–0.66 across all
 9 pairs (n≈1,500-1,800 each)**, pooled #1 = AJ Dybantsa (the #1 recruit). **WBB YoY
-r = 0.59–0.67 across 8 pairs**, #1 = S'Mya Nichols 2.63×. Six leagues total:
+r = 0.59–0.68 across 10 pairs**, #1 = S'Mya Nichols 2.63×. Six leagues total:
 soccer, NHL, NBA, WNBA, MBB, WBB.
 
 ### Size moderator (real birthdate+bio fetch, saved data/reference/player_bios.csv)
@@ -316,11 +319,13 @@ tax exists but weaker than hockey: corr(won, committed) = 0.301 (NHL 0.489).
 ### Team construction — the GM lever, honestly bounded
 
 Roster-aggregated prior-season player skill (cumulative shrunken draw & take ratios ×
-current exposure) vs actual team-season net EV differential, 15 seasons, 425 team-seasons:
-**levels r = 0.708**; actual spread sd ≈ 24.8 net minors/season, best-to-worst range 163
-minors ≈ **~3.17 wins**. YoY *changes* track almost as strongly, r = 0.567 (n = 390) — a
-real but modest gap from levels, not a churn-vs-assembly distinction; present both, not
-levels alone.
+current exposure) vs actual team-season net EV differential, 15 seasons, 393 team-seasons:
+**levels r = 0.450**; actual spread sd ≈ 20 net minors/season, best-to-worst range 139 minors
+≈ **~2.4 wins** at +0.0171 ΔWP/minor. But YoY *changes* r = 0.134 (n = 358) — one-season diffs
+are mostly noise; present the levels claim, not a churn-tracking claim.
+(Corrected 2026-09-29: the 2026-09-05 revision to r = 0.708 / 163 minors / ~3.17 wins came from
+script 05 pooling the discovery DB's 2025-26, which has no drawing-player data; 05 now drops
+seasons without coverage and reproduces the numbers above.)
 
 ### Leverage timing — null #3, with a gem inside
 
