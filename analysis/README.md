@@ -50,6 +50,7 @@ GameVibe workspace (not part of this public repo).
 | `16_playoffs_makeup_whistles.py` | 7.4 | playoffs +16% & 1:1 transfer; make-up +0.204 (z=26.8) w/ decay; close-late −12%; timing flat across skill |
 | `18_caphit_pricing_test.py` | 7.3 (pending) | staged salary regression — runs when contract data arrives |
 | `19_goals_path_baseline.py` | 6 | goals path: +0.127 goals/drawn minor over a computed EV baseline (0.212 vs 0.086 goals in the window), +0.163 in goal differential; writes `l3_goals_path_windows.parquet` |
+| `20_naive_baseline.py` | 5 | the ladder's missing rung: a player's prior raw draws per hour (pulled toward the F/D average) predicts held-out totals at 0.721, the full model 0.723 (difference +0.002, CI −0.003 to +0.008); within forwards, context adds 0.002 to ice time. Runs from committed tables, no database |
 | `fetch_referees.py` / `fetch_birthdates.py` / `fetch_bios.py` / `fetch_edge_speed.py` / `fetch_edge_zonestarts.py` | 3 | reference-data collectors (NHL public API); outputs committed in `../data/reference/` |
 
 ## Provenance & honesty notes
