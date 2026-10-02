@@ -46,7 +46,7 @@ GameVibe workspace (not part of this public repo).
 | `10-11_nba_replication_*.py` | 7.2 | NBA: FT-trip linkage; SB 0.940; YoY 0.86-0.88; Giannis 3.90× |
 | `12_wnba_replication.py` | 7.2 | WNBA: SB 0.860; YoY 0.72-0.82; Wilson 2.34× |
 | `13-14_{mbb,wbb}_replication.py` | 7.2 | NCAA: YoY 0.54-0.66 / 0.59-0.68 (see docstrings for feed caveats) |
-| `15_soccer_extract.py` + `17_soccer_replication_analysis.py` | 7.2 | StatsBomb slim-parse; SB 0.705; Hazard top-10; tax 0.301 |
+| `15_soccer_extract.py` + `17_soccer_replication_analysis.py` | 7.2 | StatsBomb slim-parse; 13 competition-seasons (map in `../data/reference/soccer_match_competitions.csv`); pooled SB 0.705, Hazard top-10, tax 0.301; men's international tournaments SB 0.636 with Hazard first, women's competitions SB 0.729 |
 | `16_playoffs_makeup_whistles.py` | 7.4 | playoffs +16% & 1:1 transfer; make-up +0.204 (z=26.8) w/ decay; close-late −12%; timing flat across skill |
 | `18_caphit_pricing_test.py` | 7.3 (pending) | staged salary regression — runs when contract data arrives |
 | `19_goals_path_baseline.py` | 6 | goals path: +0.127 goals/drawn minor over a computed EV baseline (0.212 vs 0.086 goals in the window), +0.163 in goal differential; writes `l3_goals_path_windows.parquet` |

@@ -9,6 +9,9 @@
 # data/events/<match_id>.json for each -- this repo just doesn't say which competitions.
 # Genuinely undocumented; not fixed here (would require re-deriving the exact tournament list
 # from the local raw corpus and is a bigger change than a path/dependency fix).
+# Closed 2026-10-01: ../data/reference/soccer_match_competitions.csv lists every match id with its
+# StatsBomb competition_id and season_id. It is 13 competition-seasons (8 international tournaments
+# and 5 women's club seasons), not 8 tournaments; see 17's docstring.
 import json, glob
 import numpy as np, pandas as pd
 sp='../data/derived'
