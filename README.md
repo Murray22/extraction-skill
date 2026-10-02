@@ -1,30 +1,33 @@
 # The Extraction Skill
 
-**Winning contact is a persistent, individual, and unrewarded talent across six leagues.**
+**Drawing penalties belongs to the player, not his line or the referees.**
 
 Research repository for the SSAC27 research paper competition submission by
 [Steve Murray](https://gamevibeanalytics.com) (GameVibe Research).
 
-Drawing penalties hands over a power play, yet hockey records the event only against the
-offender — the player who caused it receives no statistic at all. This work shows that
-penalty/foul drawing is a measurable, career-stable individual skill; values it in win
-probability; isolates it from possession, team effects, and referee identity; identifies its
-mechanism (two stylistic routes with different aging profiles, confirmed against NHL Edge
-tracking data); and replicates the identical construction in six leagues (NHL, NBA, WNBA,
-NCAA men's and women's basketball, soccer).
+When a player draws a penalty in hockey, his team gets a power play, and the official record
+charges only the offender. That drawing penalties repeats from year to year has been public
+knowledge for a decade, and public player-value models count it. This work tests three things
+that had not been tested: whether the skill belongs to the player or to everyone on the ice,
+whether it survives a change of referees, and whether coaches reward it with ice time. It also
+values a drawn penalty in wins, ties part of the skill to measured skating speed (NHL Edge), and
+repeats the construction where drawn fouls are already counted (NBA, WNBA, NCAA men's and women's
+basketball, soccer).
 
 ## Headline results
 
 | Claim | Evidence |
 |---|---|
 | The skill is real and persists out of sample | predicting held-out-season draw totals: r 0.25 (exposure) → 0.53 (context) → **0.72** (+skill); held-out rates monotone in prior skill quartiles (0.41→0.81/hr) |
+| The raw rate carries it | a player's prior raw draws per hour, pulled toward the forward/defence average, predicts the same held-out totals at **0.72** (model minus raw rate +0.002, 95% CI −0.003 to +0.008; script 20). Adjusting for context changes almost nothing: the rate is the player's own |
 | It is career-stable | positive in **14 of 14** adjacent season pairs since 2010 (mean r=0.59); career split-half 0.89 |
 | It is individual, not possession or team | r=0.087 vs on-ice penalty "tilt" (which is possession); team-environment controls move skill ratings by nothing |
 | It is not a referee artifact | reliability across disjoint referee crews (0.54) matches random-split calibration (0.55); full 46-official census |
 | It has win value | +0.017 win probability per drawn EV minor (state-conditional), independently triangulated via goal conversion (+0.127 goals over a computed even-strength baseline) |
 | Mechanism: speed | two stable routes (provocation vs puck-carrier); carrier route ages faster (−4.0 vs −2.6%/yr); NHL Edge measured speed predicts carrier-route draws (partial r 0.16–0.23, possession-controlled) but not provocation draws (0.04) |
 | It generalizes | same construction: NBA (reliability 0.94), WNBA (0.86), NCAA M/W (YoY 0.54–0.68), soccer (0.71 pooled; men's international tournaments 0.64, women's competitions 0.73) |
-| Nobody rewards it | r=0.067 vs points/60; deployment −0.28 min/game per SD conditional on scoring, −0.18 after zone-start controls |
+| It comes with penalties taken | career draw and take ratios correlate 0.50 (n=593); about one player in six draws more than expected and takes fewer |
+| Ice time does not rise with it | r=0.067 vs points/60; deployment −0.28 min/game per SD conditional on scoring, −0.18 after zone-start controls. This may reflect the roles drawers are cast in; there is no salary test yet |
 
 ## Repository map
 
