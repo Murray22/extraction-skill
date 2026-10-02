@@ -318,6 +318,13 @@ Same construction (position-group expectation, exposure = event-appearances): **
 SB = 0.705 (n=1,397)** pooled across tournaments. Top-10 includes **Eden Hazard** (the
 sport's canonical foul-winner) among women's-tournament leaders (Oberdorf, DeMelo). Agitator
 tax exists but weaker than hockey: corr(won, committed) = 0.301 (NHL 0.489).
+(Corrected 2026-10-01: the 1,179 files are not "8 tournaments". They are 13 StatsBomb
+competition-seasons: 4 men's international tournaments (230 matches), 4 women's international
+tournaments (178) and 5 women's club seasons from 2023-24 (771). The map is
+`data/reference/soccer_match_competitions.csv`. Women's club football is 65% of the corpus, which
+is why the pooled board is led by women's club players. Script 17 now also reports each side with
+its own position expectation: men split-half SB 0.636 (n=296), board Hazard 2.98, Messi 2.25,
+Embolo, Kane, Neymar; women SB 0.729 (n=1,101), board Milliet 3.89, Oliviero, Armengol.)
 
 ### Team construction — the GM lever, honestly bounded
 

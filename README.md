@@ -11,7 +11,7 @@ penalty/foul drawing is a measurable, career-stable individual skill; values it 
 probability; isolates it from possession, team effects, and referee identity; identifies its
 mechanism (two stylistic routes with different aging profiles, confirmed against NHL Edge
 tracking data); and replicates the identical construction in six leagues (NHL, NBA, WNBA,
-NCAA men's and women's basketball, international soccer).
+NCAA men's and women's basketball, soccer).
 
 ## Headline results
 
@@ -23,7 +23,7 @@ NCAA men's and women's basketball, international soccer).
 | It is not a referee artifact | reliability across disjoint referee crews (0.54) matches random-split calibration (0.55); full 46-official census |
 | It has win value | +0.017 win probability per drawn EV minor (state-conditional), independently triangulated via goal conversion (+0.127 goals over a computed even-strength baseline) |
 | Mechanism: speed | two stable routes (provocation vs puck-carrier); carrier route ages faster (−4.0 vs −2.6%/yr); NHL Edge measured speed predicts carrier-route draws (partial r 0.16–0.23, possession-controlled) but not provocation draws (0.04) |
-| It generalizes | same construction: NBA (reliability 0.94), WNBA (0.86), NCAA M/W (YoY 0.54–0.68), soccer (0.71) |
+| It generalizes | same construction: NBA (reliability 0.94), WNBA (0.86), NCAA M/W (YoY 0.54–0.68), soccer (0.71 pooled; men's international tournaments 0.64, women's competitions 0.73) |
 | Nobody rewards it | r=0.067 vs points/60; deployment −0.28 min/game per SD conditional on scoring, −0.18 after zone-start controls |
 
 ## Repository map

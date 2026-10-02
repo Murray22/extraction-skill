@@ -16,7 +16,7 @@ validated on a third. The skill layer nearly triples out-of-sample predictive co
 over exposure alone (0.25 → 0.72), persists across fifteen seasons (positive in 14 of 14
 adjacent pairs; career reliability 0.89), survives team-environment controls and a
 disjoint-referee-crew test, and replicates under one identical construction in five more
-leagues — NBA, WNBA, men's and women's NCAA basketball, and international soccer. A drawn
+leagues — NBA, WNBA, men's and women's NCAA basketball, and soccer. A drawn
 NHL minor is worth +1.7 points of win probability, triangulated by an independent goals
 path; the NBA analogue is +1.0. The skill decomposes into two stable stylistic routes —
 provocation and puck-carrier extraction — whose differential aging (−2.6 vs −4.0%/yr) and
@@ -88,8 +88,8 @@ time. **Officials census:** referee pairs for all 3,936 core-corpus games (46 re
 skating-speed, burst, and zone-start data for all rated players (2,362 player-seasons).
 **Replication leagues:** NBA official V3 play-by-play (5,830 games, 2019-20 → 2023-24);
 WNBA (1,306 games, 2020-2025); NCAA men's and women's basketball (ESPN feeds via
-sportsdataverse; 10 and 11 seasons); international soccer (StatsBomb open data; 1,179
-tournament matches). In the basketball family, drawn-by attribution is inferred
+sportsdataverse; 10 and 11 seasons); soccer (StatsBomb open data; 1,179
+matches: 8 international tournaments and 5 women's club seasons). In the basketball family, drawn-by attribution is inferred
 structurally by linking each free-throw trip to the opponent foul immediately preceding it
 (within six actions); soccer uses StatsBomb's labeled "Foul Won" events.
 
@@ -234,7 +234,8 @@ hand), and elite drawers' calls are distributed across game states like everyone
 | WNBA | 6 seasons · 1,306 games | 0.86 | 0.72–0.82 × 5 | Wilson 2.34× |
 | NCAA M | 10 seasons | — | 0.54–0.66 × 9 | Dybantsa 2.16× |
 | NCAA W | 11 seasons | — | 0.59–0.68 × 10 | Nichols 2.63× |
-| Soccer | 8 tournaments · 1,179 matches | 0.71 | — | Hazard pooled top-10 |
+| Soccer, men | 4 international tournaments · 230 matches | 0.64 | — | Hazard 2.98×, Messi, Embolo |
+| Soccer, women | 4 international tournaments + 5 club seasons · 949 matches | 0.73 | — | Milliet 3.89×, Oliviero, Armengol |
 
 One construction, both sexes, three levels of play; every leaderboard passes face validity
 at both ends (the bottoms are catch-and-shoot specialists, stay-at-home defensemen, and
@@ -272,7 +273,7 @@ The ΔWP estimates are state-conditional but observational; the taking-side mirr
 construction identity, not independent evidence. The fifteen-season replication uses
 all-situation ice time as exposure where the core study uses even-strength time. College
 feeds omit missed free throws and minutes; basketball drawn-by is a structural inference.
-Soccer evidence is tournament-only (no club-season persistence yet). NHL penalty events
+Soccer evidence is split-half only (no season-to-season persistence yet); the men's side is tournament-only. NHL penalty events
 carry no zone coordinates. The market claim currently rests on orthogonality and
 deployment; the literal salary test is pending (§7.3). PWHL and NBA league feeds carry
 committer-only attribution — pipeline extensions, not modeling gaps.
