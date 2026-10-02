@@ -6,6 +6,12 @@
 One section (§7.3, contract pricing) awaits external salary data and is marked accordingly.
 All other results are final and reproducible from this repository.*
 
+*Note (2026-10-01): this draft predates the submitted abstract (`abstract/`), which supersedes its
+framing. The abstract no longer claims the skill is new or unrewarded. It reports that a player's
+raw prior rate predicts as well as the model (script 20), that drawing and taking penalties go
+together (0.50), and that the ice-time result may reflect role. The numbers below are unchanged;
+the title, §1 and §7.3 will be rewritten to match if the full paper is invited.*
+
 ---
 
 ## Abstract
